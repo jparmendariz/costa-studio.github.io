@@ -58,8 +58,8 @@
   // ==========================================================================
   var observerOptions = {
     root: null,
-    rootMargin: '0px',
-    threshold: 0.1
+    rootMargin: '-50px 0px',
+    threshold: 0.15
   };
 
   var animationObserver = new IntersectionObserver(function(entries) {
@@ -71,14 +71,34 @@
     });
   }, observerOptions);
 
-  // Aplicar a secciones principales
+  // Secciones con fade-in básico
   var sectionsToAnimate = document.querySelectorAll(
-    '.filosofia, .metodologia, .valores, .cta-final'
+    '.filosofia, .cta-final'
   );
 
   sectionsToAnimate.forEach(function(section) {
     section.classList.add('animate-on-scroll');
     animationObserver.observe(section);
+  });
+
+  // Grids con animación escalonada (stagger)
+  var staggerContainers = document.querySelectorAll(
+    '.metodologia__grid, .valores__grid'
+  );
+
+  staggerContainers.forEach(function(container) {
+    container.classList.add('stagger-children');
+    animationObserver.observe(container);
+  });
+
+  // Títulos con animación individual
+  var titlesToAnimate = document.querySelectorAll(
+    '.metodologia__title, .metodologia__intro, .valores__title'
+  );
+
+  titlesToAnimate.forEach(function(title) {
+    title.classList.add('animate-on-scroll');
+    animationObserver.observe(title);
   });
 
   // ==========================================================================
