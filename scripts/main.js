@@ -47,6 +47,42 @@
   window.addEventListener('scroll', handleHeaderScroll, { passive: true });
 
   // ==========================================================================
+  // Mobile Menu
+  // ==========================================================================
+  const hamburger = document.querySelector('.header__hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const mobileLinks = document.querySelectorAll('.mobile-menu__link, .mobile-menu__cta');
+
+  function toggleMobileMenu() {
+    const isOpen = mobileMenu.classList.toggle('is-open');
+    hamburger.classList.toggle('is-active');
+    hamburger.setAttribute('aria-expanded', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  }
+
+  function closeMobileMenu() {
+    mobileMenu.classList.remove('is-open');
+    hamburger.classList.remove('is-active');
+    hamburger.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+
+  if (hamburger && mobileMenu) {
+    hamburger.addEventListener('click', toggleMobileMenu);
+
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', closeMobileMenu);
+    });
+
+    // Close menu on escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mobileMenu.classList.contains('is-open')) {
+        closeMobileMenu();
+      }
+    });
+  }
+
+  // ==========================================================================
   // Smooth Scroll for Anchor Links
   // ==========================================================================
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
