@@ -331,8 +331,19 @@ Próximos pasos:
 - Estructura de repositorio: costa-studio/costa-studio.github.io para GitHub Pages
 - Commit inicial incluye toda la base del proyecto: HTML, CSS, JS, documentación y assets
 
+**Acciones completadas:**
+- Repositorio creado en GitHub: jparmendariz/costa-studio.github.io (public)
+- Remote configurado: git@github.com:jparmendariz/costa-studio.github.io.git
+- Proyecto subido exitosamente a GitHub con todos los commits históricos
+- GitHub Pages configurado automáticamente (rama main como source)
+
+**URL del proyecto:**
+- Repositorio: https://github.com/jparmendariz/costa-studio.github.io
+- Sitio live (GitHub Pages): https://jparmendariz.github.io/costa-studio.github.io
+
 **Próximos pasos:**
-- Crear repositorio costa-studio/costa-studio.github.io en GitHub
-- Subir proyecto completo con `git push`
-- Configurar GitHub Pages si es necesario
-- Validar sitio live en https://costa-studio.github.io
+- Verificar visualización correcta del sitio en GitHub Pages
+- Configurar dominio personalizado costastudio.mx (cuando se decida)
+- Agregar CNAME si se usa dominio personalizado
+- Monitorear Lighthouse performance
+- Preparar para iteración de assets finales (logo, tipografías)
