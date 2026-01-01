@@ -76,6 +76,7 @@ html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 body {
@@ -86,6 +87,7 @@ body {
   color: var(--color-negro);
   background-color: var(--color-negro);
   overflow-x: hidden;
+  max-width: 100vw;
 }
 
 body.loaded {
@@ -1669,6 +1671,16 @@ p { max-width: 65ch; }
 
 /* Mobile-specific adjustments */
 @media (max-width: 767px) {
+  /* Prevent horizontal scroll */
+  html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+  }
+
+  main, section, .container {
+    overflow-x: hidden;
+  }
+
   /* Reduce section padding on mobile */
   :root {
     --space-section: clamp(4rem, 10vw, 6rem);
