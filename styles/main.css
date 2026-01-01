@@ -1318,7 +1318,145 @@ p { max-width: 65ch; }
 }
 
 /* --------------------------------------------------------------------------
-   14. CTA Final Section
+   14. Blog Section
+   -------------------------------------------------------------------------- */
+.blog {
+  background: var(--color-arena);
+}
+
+.blog__header {
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
+.blog__label {
+  font-size: var(--text-micro);
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-azul-costa);
+  margin-bottom: var(--space-sm);
+}
+
+.blog__title {
+  color: var(--color-negro);
+  margin-bottom: var(--space-xs);
+}
+
+.blog__intro {
+  font-size: var(--text-body);
+  font-weight: 300;
+  opacity: 0.6;
+  margin-top: 0;
+}
+
+.blog__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+}
+
+.blog__card {
+  position: relative;
+  padding: var(--space-md);
+  background: var(--color-blanco);
+  border-radius: var(--radius-md);
+  border-left: 3px solid var(--color-azul-costa);
+  transition: all var(--transition-smooth);
+}
+
+.blog__card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.blog__card--mx {
+  border-left-color: #006847;
+}
+
+.blog__card--us {
+  border-left-color: #3C3B6E;
+}
+
+.blog__card--global {
+  border-left-color: var(--color-azul-costa);
+}
+
+.blog__region {
+  display: inline-block;
+  padding: calc(var(--space-xs) * 0.5) var(--space-xs);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-blanco);
+  background: var(--color-azul-costa);
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--space-sm);
+}
+
+.blog__card--mx .blog__region {
+  background: #006847;
+}
+
+.blog__card--us .blog__region {
+  background: #3C3B6E;
+}
+
+.blog__card--global .blog__region {
+  background: var(--color-azul-costa);
+}
+
+.blog__link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.blog__card-title {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: none;
+  line-height: 1.4;
+  color: var(--color-negro);
+  margin-bottom: var(--space-xs);
+  transition: color var(--transition-smooth);
+}
+
+.blog__card:hover .blog__card-title {
+  color: var(--color-azul-costa);
+}
+
+.blog__source {
+  font-size: var(--text-micro);
+  font-weight: 400;
+  color: var(--color-negro);
+  opacity: 0.5;
+}
+
+@media (min-width: 768px) {
+  .blog__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .blog__grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .blog__card {
+    padding: var(--space-sm);
+  }
+
+  .blog__card-title {
+    font-size: 0.9rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   15. CTA Final Section
    -------------------------------------------------------------------------- */
 .cta-final {
   position: relative;

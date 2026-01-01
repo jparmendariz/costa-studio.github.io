@@ -16,6 +16,7 @@
       'nav.services': 'Servicios',
       'nav.methodology': 'Metodología',
       'nav.portfolio': 'Portafolio',
+      'nav.blog': 'Blog',
       'nav.cta': 'Agendar llamada',
 
       // Hero
@@ -87,6 +88,11 @@
       'portfolio.cta.text': 'Resultados que hablan por sí mismos.',
       'portfolio.cta.btn': 'Escribe tu historia de éxito',
 
+      // Blog
+      'blog.label': 'Industria',
+      'blog.title': 'Blog',
+      'blog.intro': 'Lo último en influencer marketing de fuentes líderes en la industria.',
+
       // CTA
       'cta.badge': 'Comienza tu viaje',
       'cta.title': 'Impulsa tu marca<br>con nosotros',
@@ -108,6 +114,7 @@
       'nav.services': 'Services',
       'nav.methodology': 'Methodology',
       'nav.portfolio': 'Portfolio',
+      'nav.blog': 'Blog',
       'nav.cta': 'Book a call',
 
       // Hero
@@ -178,6 +185,11 @@
       'portfolio.consulting': 'Consulting',
       'portfolio.cta.text': 'Results that speak for themselves.',
       'portfolio.cta.btn': 'Write your success story',
+
+      // Blog
+      'blog.label': 'Industry',
+      'blog.title': 'Blog',
+      'blog.intro': 'The latest in influencer marketing from leading industry sources.',
 
       // CTA
       'cta.badge': 'Start your journey',
