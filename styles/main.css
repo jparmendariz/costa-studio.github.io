@@ -366,16 +366,17 @@ p { max-width: 65ch; }
 
 /* Language Toggle */
 .lang-toggle {
-  display: flex;
+  display: flex !important;
   align-items: center;
   justify-content: center;
   width: 36px;
   height: 36px;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 50%;
   cursor: pointer;
   transition: all var(--transition-smooth);
+  flex-shrink: 0;
 }
 
 .lang-toggle:hover {
