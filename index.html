@@ -47,12 +47,15 @@
         COSTA STUDIO
       </a>
       <div class="header__menu">
-        <a href="#proposito" class="header__link">Propósito</a>
-        <a href="#servicios" class="header__link">Servicios</a>
-        <a href="#metodologia" class="header__link">Metodología</a>
-        <a href="#portafolio" class="header__link">Portafolio</a>
+        <a href="#proposito" class="header__link" data-i18n="nav.purpose">Propósito</a>
+        <a href="#servicios" class="header__link" data-i18n="nav.services">Servicios</a>
+        <a href="#metodologia" class="header__link" data-i18n="nav.methodology">Metodología</a>
+        <a href="#portafolio" class="header__link" data-i18n="nav.portfolio">Portafolio</a>
       </div>
-      <a href="#agendar" class="btn-primary header__cta">Agendar llamada</a>
+      <button class="lang-toggle" id="lang-toggle" aria-label="Cambiar idioma">
+        <span class="lang-toggle__current">ES</span>
+      </button>
+      <a href="#agendar" class="btn-primary header__cta" data-i18n="nav.cta">Agendar llamada</a>
       <button class="header__hamburger" aria-label="Abrir menú" aria-expanded="false">
         <span></span>
         <span></span>
@@ -64,11 +67,14 @@
   <!-- Mobile Menu -->
   <div class="mobile-menu" id="mobile-menu">
     <nav class="mobile-menu__nav">
-      <a href="#proposito" class="mobile-menu__link">Propósito</a>
-      <a href="#servicios" class="mobile-menu__link">Servicios</a>
-      <a href="#metodologia" class="mobile-menu__link">Metodología</a>
-      <a href="#portafolio" class="mobile-menu__link">Portafolio</a>
-      <a href="#agendar" class="btn-primary mobile-menu__cta">Agendar llamada</a>
+      <a href="#proposito" class="mobile-menu__link" data-i18n="nav.purpose">Propósito</a>
+      <a href="#servicios" class="mobile-menu__link" data-i18n="nav.services">Servicios</a>
+      <a href="#metodologia" class="mobile-menu__link" data-i18n="nav.methodology">Metodología</a>
+      <a href="#portafolio" class="mobile-menu__link" data-i18n="nav.portfolio">Portafolio</a>
+      <a href="#agendar" class="btn-primary mobile-menu__cta" data-i18n="nav.cta">Agendar llamada</a>
+      <button class="lang-toggle lang-toggle--mobile" id="lang-toggle-mobile" aria-label="Cambiar idioma">
+        <span class="lang-toggle__current">ES</span>
+      </button>
     </nav>
   </div>
 
@@ -94,25 +100,25 @@
       <div class="hero__content container">
         <div class="hero__badge" data-animate="fade-up">
           <span class="hero__badge-dot"></span>
-          Influencer Marketing Data-Driven
+          <span data-i18n="hero.badge">Influencer Marketing Data-Driven</span>
         </div>
 
         <h1 id="hero-title" class="hero__title" data-animate="split-text">
-          <span class="hero__title-line">Donde las ideas</span>
-          <span class="hero__title-line hero__title-accent">tocan tierra</span>
+          <span class="hero__title-line" data-i18n="hero.title1">Donde las ideas</span>
+          <span class="hero__title-line hero__title-accent" data-i18n="hero.title2">tocan tierra</span>
         </h1>
 
-        <p class="hero__subtitle" data-animate="fade-up" data-delay="0.4">
+        <p class="hero__subtitle" data-animate="fade-up" data-delay="0.4" data-i18n="hero.subtitle">
           Guiamos a las marcas en la creación de relaciones auténticas
           que generan valor real.
         </p>
 
         <div class="hero__ctas" data-animate="fade-up" data-delay="0.6">
-          <a href="#agendar" class="btn-primary btn-primary--large">
+          <a href="#agendar" class="btn-primary btn-primary--large" data-i18n="hero.cta1">
             Agendar llamada
           </a>
           <a href="#proposito" class="btn-secondary">
-            Conocer más
+            <span data-i18n="hero.cta2">Conocer más</span>
             <svg class="btn-secondary__arrow" width="20" height="20" viewBox="0 0 20 20" fill="none">
               <path d="M4 10h12m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
@@ -140,16 +146,16 @@
       </div>
 
       <div class="container proposito__content">
-        <div class="proposito__label" data-animate="fade-up">Nuestro Propósito</div>
+        <div class="proposito__label" data-animate="fade-up" data-i18n="purpose.label">Nuestro Propósito</div>
 
-        <h2 id="proposito-title" class="proposito__title" data-animate="reveal-text">
+        <h2 id="proposito-title" class="proposito__title" data-animate="reveal-text" data-i18n="purpose.title">
           Guiar a las marcas en la creación de relaciones auténticas
           que generen un valor real
         </h2>
 
         <div class="proposito__divider" data-animate="scale-x"></div>
 
-        <p class="proposito__text" data-animate="fade-up" data-delay="0.2">
+        <p class="proposito__text" data-animate="fade-up" data-delay="0.2" data-i18n="purpose.text">
           Construimos puentes duraderos que conectan marcas con personas.
           No somos una fábrica de campañas. Somos un estudio donde cada
           colaboración se trata como una obra, no como producción en serie.
@@ -159,7 +165,7 @@
           <div class="proposito__stat">
             <span class="proposito__stat-number" data-count="3000">0</span>
             <span class="proposito__stat-plus">+</span>
-            <span class="proposito__stat-label">Creadores verificados</span>
+            <span class="proposito__stat-label" data-i18n="purpose.stat1">Creadores verificados</span>
           </div>
           <div class="proposito__stat">
             <span class="proposito__stat-number" data-count="100">0</span>
@@ -168,7 +174,7 @@
           </div>
           <div class="proposito__stat">
             <span class="proposito__stat-number">24/7</span>
-            <span class="proposito__stat-label">Comunicación en tiempo real</span>
+            <span class="proposito__stat-label" data-i18n="purpose.stat3">Comunicación en tiempo real</span>
           </div>
         </div>
       </div>
@@ -180,11 +186,11 @@
     <section class="servicios section" id="servicios" aria-labelledby="servicios-title">
       <div class="container">
         <div class="servicios__header">
-          <div class="servicios__label" data-animate="fade-up">Lo que hacemos</div>
-          <h2 id="servicios-title" class="servicios__title" data-animate="fade-up" data-delay="0.1">
+          <div class="servicios__label" data-animate="fade-up" data-i18n="services.label">Lo que hacemos</div>
+          <h2 id="servicios-title" class="servicios__title" data-animate="fade-up" data-delay="0.1" data-i18n="services.title">
             Servicios
           </h2>
-          <p class="servicios__intro" data-animate="fade-up" data-delay="0.2">
+          <p class="servicios__intro" data-animate="fade-up" data-delay="0.2" data-i18n="services.intro">
             Combinamos creatividad con datos para campañas que impactan.
           </p>
         </div>
@@ -197,29 +203,29 @@
                 <path d="M24 14v10l7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
               </svg>
             </div>
-            <h3 class="servicio__titulo">Influencer Marketing</h3>
-            <p class="servicio__descripcion">
+            <h3 class="servicio__titulo" data-i18n="services.s1.title">Influencer Marketing</h3>
+            <p class="servicio__descripcion" data-i18n="services.s1.desc">
               Campañas estratégicas con creadores verificados.
               Tracking en tiempo real y métricas que importan:
               CPV, CPE, engagement rate desagregado.
             </p>
             <div class="servicio__tags">
-              <span>Estrategia</span>
-              <span>Ejecución</span>
-              <span>Medición</span>
+              <span data-i18n="services.s1.tag1">Estrategia</span>
+              <span data-i18n="services.s1.tag2">Ejecución</span>
+              <span data-i18n="services.s1.tag3">Medición</span>
             </div>
           </article>
 
           <article class="servicio servicio--featured" data-animate="fade-up" data-delay="0.2">
-            <div class="servicio__badge">Tecnología propietaria</div>
+            <div class="servicio__badge" data-i18n="services.s2.badge">Tecnología propietaria</div>
             <div class="servicio__icon">
               <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
                 <rect x="8" y="12" width="32" height="24" rx="2" stroke="currentColor" stroke-width="1.5"/>
                 <path d="M16 24l4 4 8-8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </div>
-            <h3 class="servicio__titulo">Dashboard de Métricas</h3>
-            <p class="servicio__descripcion">
+            <h3 class="servicio__titulo" data-i18n="services.s2.title">Dashboard de Métricas</h3>
+            <p class="servicio__descripcion" data-i18n="services.s2.desc">
               Monitoreo en tiempo real de todas tus campañas.
               Transparencia total que nadie más ofrece.
               Data insights únicos en la industria.
@@ -237,16 +243,16 @@
                 <path d="M24 8l4 8 8 1-6 6 2 8-8-4-8 4 2-8-6-6 8-1 4-8z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
               </svg>
             </div>
-            <h3 class="servicio__titulo">Consultoría Creativa</h3>
-            <p class="servicio__descripcion">
+            <h3 class="servicio__titulo" data-i18n="services.s3.title">Consultoría Creativa</h3>
+            <p class="servicio__descripcion" data-i18n="services.s3.desc">
               Estrategia de marca con rigor de consultoría.
               Entendemos tendencias culturales para crear
               conexiones genuinas con tu audiencia.
             </p>
             <div class="servicio__tags">
-              <span>Estrategia</span>
-              <span>Cultura</span>
-              <span>Tendencias</span>
+              <span data-i18n="services.s3.tag1">Estrategia</span>
+              <span data-i18n="services.s3.tag2">Cultura</span>
+              <span data-i18n="services.s3.tag3">Tendencias</span>
             </div>
           </article>
         </div>
@@ -273,11 +279,11 @@
 
       <div class="container">
         <div class="metodologia__header">
-          <div class="metodologia__label" data-animate="fade-up">Nuestra metodología</div>
-          <h2 id="metodologia-title" class="metodologia__title" data-animate="fade-up" data-delay="0.1">
+          <div class="metodologia__label" data-animate="fade-up" data-i18n="methodology.label">Nuestra metodología</div>
+          <h2 id="metodologia-title" class="metodologia__title" data-animate="fade-up" data-delay="0.1" data-i18n="methodology.title">
             La Brújula Costa
           </h2>
-          <p class="metodologia__intro" data-animate="fade-up" data-delay="0.2">
+          <p class="metodologia__intro" data-animate="fade-up" data-delay="0.2" data-i18n="methodology.intro">
             Cuatro pilares que guían cada proyecto hacia resultados extraordinarios.
           </p>
         </div>
@@ -285,8 +291,8 @@
         <div class="metodologia__compass">
           <article class="pilar pilar--n" data-animate="fade-up" data-delay="0.1">
             <span class="pilar__numero">01</span>
-            <h3 class="pilar__titulo">Cartografía</h3>
-            <p class="pilar__descripcion">
+            <h3 class="pilar__titulo" data-i18n="methodology.p1.title">Cartografía</h3>
+            <p class="pilar__descripcion" data-i18n="methodology.p1.desc">
               Mapeamos 3,000+ influencers con tecnología avanzada.
               Cada perfil verificado por audiencia, engagement y afinidad.
             </p>
@@ -294,8 +300,8 @@
 
           <article class="pilar pilar--e" data-animate="fade-up" data-delay="0.2">
             <span class="pilar__numero">02</span>
-            <h3 class="pilar__titulo">Estrategia</h3>
-            <p class="pilar__descripcion">
+            <h3 class="pilar__titulo" data-i18n="methodology.p2.title">Estrategia</h3>
+            <p class="pilar__descripcion" data-i18n="methodology.p2.desc">
               Diseñamos campañas con rigor de consultoría.
               Objetivos claros, KPIs medibles, creatividad con propósito.
             </p>
@@ -303,8 +309,8 @@
 
           <article class="pilar pilar--s" data-animate="fade-up" data-delay="0.3">
             <span class="pilar__numero">03</span>
-            <h3 class="pilar__titulo">Ejecución Lean</h3>
-            <p class="pilar__descripcion">
+            <h3 class="pilar__titulo" data-i18n="methodology.p3.title">Ejecución Lean</h3>
+            <p class="pilar__descripcion" data-i18n="methodology.p3.desc">
               Implementamos con agilidad y optimización constante.
               Sin burocracia, con resultados de primera línea.
             </p>
@@ -312,8 +318,8 @@
 
           <article class="pilar pilar--w" data-animate="fade-up" data-delay="0.4">
             <span class="pilar__numero">04</span>
-            <h3 class="pilar__titulo">Comunicación 24/7</h3>
-            <p class="pilar__descripcion">
+            <h3 class="pilar__titulo" data-i18n="methodology.p4.title">Comunicación 24/7</h3>
+            <p class="pilar__descripcion" data-i18n="methodology.p4.desc">
               Acceso en tiempo real al estado de tu campaña.
               Respuestas cualquier día, cualquier hora.
             </p>
@@ -343,8 +349,8 @@
 
       <div class="container">
         <div class="valores__header">
-          <div class="valores__label" data-animate="fade-up">Por qué elegirnos</div>
-          <h2 id="valores-title" class="valores__title" data-animate="fade-up" data-delay="0.1">
+          <div class="valores__label" data-animate="fade-up" data-i18n="values.label">Por qué elegirnos</div>
+          <h2 id="valores-title" class="valores__title" data-animate="fade-up" data-delay="0.1" data-i18n="values.title">
             Nuestros Valores
           </h2>
         </div>
@@ -358,8 +364,8 @@
                 <path d="M20 30l12 8 12-8" stroke="currentColor" stroke-width="1.5"/>
               </svg>
             </div>
-            <h3 class="valor__titulo">Craftmanship</h3>
-            <p class="valor__descripcion">
+            <h3 class="valor__titulo" data-i18n="values.v1.title">Craftmanship</h3>
+            <p class="valor__descripcion" data-i18n="values.v1.desc">
               Cada campaña tratada como obra, no producción en serie.
               Menos proyectos, clientes más felices. Elevamos el potencial
               humano a través de creatividad y maestría.
@@ -374,8 +380,8 @@
                 <circle cx="32" cy="32" r="4" fill="currentColor"/>
               </svg>
             </div>
-            <h3 class="valor__titulo">Data + Estrategia</h3>
-            <p class="valor__descripcion">
+            <h3 class="valor__titulo" data-i18n="values.v2.title">Data + Strategy</h3>
+            <p class="valor__descripcion" data-i18n="values.v2.desc">
               Rigor de consultoría combinado con tecnología propietaria.
               Redefinimos y elevamos el estándar de la industria con
               decisiones basadas en datos reales.
@@ -390,8 +396,8 @@
                 <circle cx="32" cy="24" r="4" stroke="currentColor" stroke-width="1.5"/>
               </svg>
             </div>
-            <h3 class="valor__titulo">Cultura Amplificada</h3>
-            <p class="valor__descripcion">
+            <h3 class="valor__titulo" data-i18n="values.v3.title">Cultura Amplificada</h3>
+            <p class="valor__descripcion" data-i18n="values.v3.desc">
               Leemos, entendemos y amplificamos la cultura.
               Sensibilidad a corrientes culturales que nos permite
               crear conexiones genuinas y relevantes.
@@ -407,11 +413,11 @@
     <section class="portafolio section" id="portafolio" aria-labelledby="portafolio-title">
       <div class="container">
         <div class="portafolio__header">
-          <div class="portafolio__label" data-animate="fade-up">Nuestro trabajo</div>
-          <h2 id="portafolio-title" class="portafolio__title" data-animate="fade-up" data-delay="0.1">
+          <div class="portafolio__label" data-animate="fade-up" data-i18n="portfolio.label">Nuestro trabajo</div>
+          <h2 id="portafolio-title" class="portafolio__title" data-animate="fade-up" data-delay="0.1" data-i18n="portfolio.title">
             Portafolio
           </h2>
-          <p class="portafolio__intro" data-animate="fade-up" data-delay="0.2">
+          <p class="portafolio__intro" data-animate="fade-up" data-delay="0.2" data-i18n="portfolio.intro">
             Campañas que conectan marcas con audiencias de manera auténtica.
           </p>
         </div>
@@ -424,13 +430,13 @@
                   <source src="https://raw.githubusercontent.com/jparmendariz/costastudio/main/photos/The%20Beauty%20Bar/Video_Generation_Confirmation.mp4" type="video/mp4">
                 </video>
                 <div class="proyecto__overlay">
-                  <span class="proyecto__categoria">Influencer Marketing</span>
+                  <span class="proyecto__categoria" data-i18n="portfolio.tbb.category">Influencer Marketing</span>
                   <h3 class="proyecto__titulo">The Beauty Bar</h3>
-                  <p class="proyecto__descripcion">Colaboración con influencer de alto impacto para posicionamiento de marca y awareness.</p>
+                  <p class="proyecto__descripcion" data-i18n="portfolio.tbb.desc">Colaboración con influencer de alto impacto para posicionamiento de marca y awareness.</p>
                   <div class="proyecto__stats">
                     <div class="proyecto__stat">
                       <span class="proyecto__stat-value">+230K</span>
-                      <span class="proyecto__stat-label">Visualizaciones</span>
+                      <span class="proyecto__stat-label" data-i18n="portfolio.tbb.views">Visualizaciones</span>
                     </div>
                     <div class="proyecto__stat">
                       <span class="proyecto__stat-value">2.5%</span>
@@ -438,7 +444,7 @@
                     </div>
                     <div class="proyecto__stat">
                       <span class="proyecto__stat-value">&lt;1 mes</span>
-                      <span class="proyecto__stat-label">Tiempo</span>
+                      <span class="proyecto__stat-label" data-i18n="portfolio.tbb.time">Tiempo</span>
                     </div>
                   </div>
                 </div>
@@ -450,7 +456,7 @@
             <div class="proyecto__media">
               <div class="proyecto__overlay">
                 <span class="proyecto__categoria">Dashboard</span>
-                <h3 class="proyecto__titulo">Próximamente</h3>
+                <h3 class="proyecto__titulo" data-i18n="portfolio.coming">Próximamente</h3>
               </div>
             </div>
           </article>
@@ -458,17 +464,17 @@
           <article class="proyecto" data-animate="fade-up" data-delay="0.3">
             <div class="proyecto__media">
               <div class="proyecto__overlay">
-                <span class="proyecto__categoria">Consultoría</span>
-                <h3 class="proyecto__titulo">Próximamente</h3>
+                <span class="proyecto__categoria" data-i18n="portfolio.consulting">Consultoría</span>
+                <h3 class="proyecto__titulo" data-i18n="portfolio.coming">Próximamente</h3>
               </div>
             </div>
           </article>
         </div>
 
         <div class="portafolio__cta" data-animate="fade-up" data-delay="0.4">
-          <p>Resultados que hablan por sí mismos.</p>
+          <p data-i18n="portfolio.cta.text">Resultados que hablan por sí mismos.</p>
           <a href="#agendar" class="btn-secondary">
-            Escribe tu historia de éxito
+            <span data-i18n="portfolio.cta.btn">Escribe tu historia de éxito</span>
             <svg class="btn-secondary__arrow" width="20" height="20" viewBox="0 0 20 20" fill="none">
               <path d="M4 10h12m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
@@ -496,27 +502,27 @@
       </div>
 
       <div class="container cta-final__content">
-        <div class="cta-final__badge" data-animate="fade-up">
+        <div class="cta-final__badge" data-animate="fade-up" data-i18n="cta.badge">
           Comienza tu viaje
         </div>
 
-        <h2 id="cta-title" class="cta-final__title" data-animate="fade-up" data-delay="0.1">
+        <h2 id="cta-title" class="cta-final__title" data-animate="fade-up" data-delay="0.1" data-i18n="cta.title">
           Impulsa tu marca<br>con nosotros
         </h2>
 
-        <p class="cta-final__subtitle" data-animate="fade-up" data-delay="0.2">
+        <p class="cta-final__subtitle" data-animate="fade-up" data-delay="0.2" data-i18n="cta.subtitle">
           Conversación de 30 minutos. Sin compromiso.
           Solo claridad sobre cómo podemos ayudarte.
         </p>
 
         <div class="cta-final__buttons" data-animate="fade-up" data-delay="0.3">
-          <a href="https://calendly.com/jparmendariz-costastudio/30min" class="btn-primary btn-primary--large btn-primary--glow" target="_blank" rel="noopener">
+          <a href="https://calendly.com/jparmendariz-costastudio/30min" class="btn-primary btn-primary--large btn-primary--glow" target="_blank" rel="noopener" data-i18n="cta.btn">
             Agendar llamada
           </a>
         </div>
 
         <div class="cta-final__contact" data-animate="fade-up" data-delay="0.4">
-          <p>O escríbenos directamente a</p>
+          <p data-i18n="cta.or">O escríbenos directamente a</p>
           <a href="mailto:jparmendariz@costastudio.mx" class="cta-final__email">
             jparmendariz@costastudio.mx
           </a>
@@ -533,26 +539,26 @@
       <div class="footer__main">
         <div class="footer__brand">
           <div class="footer__logo">COSTA STUDIO</div>
-          <p class="footer__tagline">Donde las ideas tocan tierra</p>
+          <p class="footer__tagline" data-i18n="footer.tagline">Donde las ideas tocan tierra</p>
         </div>
 
         <div class="footer__nav">
           <div class="footer__col">
-            <h4 class="footer__col-title">Navegación</h4>
-            <a href="#proposito">Propósito</a>
-            <a href="#servicios">Servicios</a>
-            <a href="#metodologia">Metodología</a>
-            <a href="#portafolio">Portafolio</a>
+            <h4 class="footer__col-title" data-i18n="footer.nav">Navegación</h4>
+            <a href="#proposito" data-i18n="nav.purpose">Propósito</a>
+            <a href="#servicios" data-i18n="nav.services">Servicios</a>
+            <a href="#metodologia" data-i18n="nav.methodology">Metodología</a>
+            <a href="#portafolio" data-i18n="nav.portfolio">Portafolio</a>
           </div>
 
           <div class="footer__col">
-            <h4 class="footer__col-title">Contacto</h4>
+            <h4 class="footer__col-title" data-i18n="footer.contact">Contacto</h4>
             <a href="mailto:jparmendariz@costastudio.mx">jparmendariz@costastudio.mx</a>
-            <a href="https://calendly.com/jparmendariz-costastudio/30min" target="_blank" rel="noopener">Agendar llamada</a>
+            <a href="https://calendly.com/jparmendariz-costastudio/30min" target="_blank" rel="noopener" data-i18n="nav.cta">Agendar llamada</a>
           </div>
 
           <div class="footer__col">
-            <h4 class="footer__col-title">Redes</h4>
+            <h4 class="footer__col-title" data-i18n="footer.social">Redes</h4>
             <a href="https://www.instagram.com/costastudio.mx/" target="_blank" rel="noopener">Instagram</a>
             <a href="https://linkedin.com/company/costa-studio-mx" target="_blank" rel="noopener">LinkedIn</a>
           </div>
@@ -560,8 +566,8 @@
       </div>
 
       <div class="footer__bottom">
-        <p class="footer__copy">2025 Costa Studio. Ciudad de México.</p>
-        <p class="footer__credits">Craftmanship sobre volumen.</p>
+        <p class="footer__copy" data-i18n="footer.copy">2025 Costa Studio. Ciudad de México.</p>
+        <p class="footer__credits" data-i18n="footer.credits">Craftmanship sobre volumen.</p>
       </div>
     </div>
   </footer>
