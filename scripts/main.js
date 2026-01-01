@@ -28,16 +28,16 @@
       'hero.cta2': 'Conocer más',
 
       // Purpose
-      'purpose.label': 'Nuestro Propósito',
-      'purpose.title': 'Guiar a las marcas en la creación de relaciones auténticas que generen un valor real',
-      'purpose.text': 'Construimos puentes duraderos que conectan marcas con personas. No somos una fábrica de campañas. Somos un estudio donde cada colaboración se trata como una obra, no como producción en serie.',
+      'purpose.label': 'Qué hacemos',
+      'purpose.title': 'Conectamos marcas con creadores para campañas que generan resultados',
+      'purpose.text': 'Somos una agencia de influencer marketing. Diseñamos y ejecutamos campañas con una base propietaria de 3,000+ creadores verificados. Cada colaboración se trata como una obra, no como producción en serie.',
       'purpose.stat1': 'Creadores verificados',
       'purpose.stat3': 'Comunicación en tiempo real',
 
       // Services
-      'services.label': 'Lo que hacemos',
+      'services.label': 'Cómo lo hacemos',
       'services.title': 'Servicios',
-      'services.intro': 'Combinamos creatividad con datos para campañas que impactan.',
+      'services.intro': 'Desde la estrategia hasta la medición de resultados, manejamos todo el proceso de tu campaña con influencers.',
       'services.s1.title': 'Influencer Marketing',
       'services.s1.desc': 'Campañas estratégicas con creadores verificados. Tracking en tiempo real y métricas que importan: CPV, CPE, engagement rate desagregado.',
       'services.s1.tag1': 'Estrategia',
@@ -53,9 +53,9 @@
       'services.s3.tag3': 'Tendencias',
 
       // Methodology
-      'methodology.label': 'Nuestra metodología',
+      'methodology.label': 'Nuestro proceso',
       'methodology.title': 'La Brújula Costa',
-      'methodology.intro': 'Cuatro pilares que guían cada proyecto hacia resultados extraordinarios.',
+      'methodology.intro': 'Así trabajamos cada campaña de influencer marketing, desde la selección de creadores hasta la medición de resultados.',
       'methodology.p1.title': 'Cartografía',
       'methodology.p1.desc': 'Mapeamos 3,000+ influencers con tecnología avanzada. Cada perfil verificado por audiencia, engagement y afinidad.',
       'methodology.p2.title': 'Estrategia',
@@ -78,7 +78,7 @@
       // Portfolio
       'portfolio.label': 'Nuestro trabajo',
       'portfolio.title': 'Portafolio',
-      'portfolio.intro': 'Campañas que conectan marcas con audiencias de manera auténtica.',
+      'portfolio.intro': 'Campañas de influencer marketing con resultados medibles.',
       'portfolio.tbb.category': 'Influencer Marketing',
       'portfolio.tbb.desc': 'Colaboración con influencer de alto impacto para posicionamiento de marca y awareness.',
       'portfolio.tbb.views': 'Visualizaciones',
@@ -93,10 +93,22 @@
       'blog.title': 'Blog',
       'blog.intro': 'Lo último en influencer marketing de fuentes líderes en la industria.',
 
+      // Newsletter
+      'newsletter.label': 'Mantente informado',
+      'newsletter.title': 'Claridad cada semana',
+      'newsletter.intro': 'Recibe insights semanales de la industria: tendencias, casos y movimientos en influencer marketing que importan para tu marca.',
+      'newsletter.placeholder': 'tu@email.com',
+      'newsletter.btn': 'Suscribirme',
+      'newsletter.privacy': 'Sin spam. Solo contenido que vale la pena. Cancela cuando quieras.',
+      'newsletter.f1': 'Noticias de Forbes, WSJ, NYT',
+      'newsletter.f2': 'México, USA y Global',
+      'newsletter.f3': 'Cada jueves en tu inbox',
+      'newsletter.success': '¡Gracias! Te enviamos un correo de confirmación.',
+
       // CTA
       'cta.badge': 'Comienza tu viaje',
       'cta.title': 'Impulsa tu marca<br>con nosotros',
-      'cta.subtitle': 'Conversación de 30 minutos. Sin compromiso. Solo claridad sobre cómo podemos ayudarte.',
+      'cta.subtitle': 'Conversación de 30 minutos sobre tu estrategia de influencer marketing. Sin compromiso. Solo claridad sobre cómo podemos ayudarte.',
       'cta.btn': 'Agendar llamada',
       'cta.or': 'O escríbenos directamente a',
 
@@ -126,16 +138,16 @@
       'hero.cta2': 'Learn more',
 
       // Purpose
-      'purpose.label': 'Our Purpose',
-      'purpose.title': 'Guide brands in creating authentic relationships that generate real value',
-      'purpose.text': 'We build lasting bridges that connect brands with people. We are not a campaign factory. We are a studio where each collaboration is treated as a work of art, not mass production.',
+      'purpose.label': 'What we do',
+      'purpose.title': 'We connect brands with creators for campaigns that drive results',
+      'purpose.text': 'We are an influencer marketing agency. We design and execute campaigns with a proprietary database of 3,000+ verified creators. Each collaboration is treated as a work of art, not mass production.',
       'purpose.stat1': 'Verified creators',
       'purpose.stat3': 'Real-time communication',
 
       // Services
-      'services.label': 'What we do',
+      'services.label': 'How we do it',
       'services.title': 'Services',
-      'services.intro': 'We combine creativity with data for campaigns that make an impact.',
+      'services.intro': 'From strategy to results measurement, we manage your entire influencer campaign process.',
       'services.s1.title': 'Influencer Marketing',
       'services.s1.desc': 'Strategic campaigns with verified creators. Real-time tracking and metrics that matter: CPV, CPE, disaggregated engagement rate.',
       'services.s1.tag1': 'Strategy',
@@ -151,9 +163,9 @@
       'services.s3.tag3': 'Trends',
 
       // Methodology
-      'methodology.label': 'Our methodology',
+      'methodology.label': 'Our process',
       'methodology.title': 'The Costa Compass',
-      'methodology.intro': 'Four pillars that guide each project towards extraordinary results.',
+      'methodology.intro': 'How we work each influencer marketing campaign, from creator selection to results measurement.',
       'methodology.p1.title': 'Mapping',
       'methodology.p1.desc': 'We map 3,000+ influencers with advanced technology. Each profile verified by audience, engagement and affinity.',
       'methodology.p2.title': 'Strategy',
@@ -176,7 +188,7 @@
       // Portfolio
       'portfolio.label': 'Our work',
       'portfolio.title': 'Portfolio',
-      'portfolio.intro': 'Campaigns that authentically connect brands with audiences.',
+      'portfolio.intro': 'Influencer marketing campaigns with measurable results.',
       'portfolio.tbb.category': 'Influencer Marketing',
       'portfolio.tbb.desc': 'High-impact influencer collaboration for brand positioning and awareness.',
       'portfolio.tbb.views': 'Views',
@@ -191,10 +203,22 @@
       'blog.title': 'Blog',
       'blog.intro': 'The latest in influencer marketing from leading industry sources.',
 
+      // Newsletter
+      'newsletter.label': 'Stay informed',
+      'newsletter.title': 'Clarity every week',
+      'newsletter.intro': 'Get weekly industry insights: trends, cases, and movements in influencer marketing that matter for your brand.',
+      'newsletter.placeholder': 'you@email.com',
+      'newsletter.btn': 'Subscribe',
+      'newsletter.privacy': 'No spam. Only content worth reading. Cancel anytime.',
+      'newsletter.f1': 'News from Forbes, WSJ, NYT',
+      'newsletter.f2': 'Mexico, USA & Global',
+      'newsletter.f3': 'Every Thursday in your inbox',
+      'newsletter.success': 'Thank you! We sent you a confirmation email.',
+
       // CTA
       'cta.badge': 'Start your journey',
       'cta.title': 'Boost your brand<br>with us',
-      'cta.subtitle': '30-minute conversation. No commitment. Just clarity on how we can help you.',
+      'cta.subtitle': '30-minute conversation about your influencer marketing strategy. No commitment. Just clarity on how we can help you.',
       'cta.btn': 'Book a call',
       'cta.or': 'Or write to us directly at',
 
@@ -210,7 +234,7 @@
 
   let currentLang = localStorage.getItem('costa-lang') || 'es';
 
-  function setLanguage(lang) {
+  let setLanguage = function(lang) {
     currentLang = lang;
     localStorage.setItem('costa-lang', lang);
 
@@ -229,7 +253,10 @@
 
     // Update HTML lang attribute
     document.documentElement.lang = lang;
-  }
+
+    // Update placeholder translations
+    updatePlaceholders();
+  };
 
   function toggleLanguage() {
     const newLang = currentLang === 'es' ? 'en' : 'es';
@@ -635,6 +662,73 @@
   // Prevent FOUC (Flash of Unstyled Content)
   // ==========================================================================
   document.documentElement.classList.add('js-loaded');
+
+  // ==========================================================================
+  // Newsletter Form Handler
+  // ==========================================================================
+  const newsletterForm = document.getElementById('newsletter-form');
+
+  if (newsletterForm) {
+    newsletterForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const emailInput = this.querySelector('.newsletter__input');
+      const email = emailInput.value;
+
+      // Validate email
+      if (!email || !email.includes('@')) {
+        emailInput.style.borderColor = '#e74c3c';
+        return;
+      }
+
+      // Get success message from translations
+      const successMessage = translations[currentLang]['newsletter.success'] || '¡Gracias! Te enviamos un correo de confirmación.';
+
+      // Set success state
+      this.setAttribute('data-success-message', successMessage);
+      this.classList.add('is-success');
+
+      // Hide privacy text
+      const privacyText = this.querySelector('.newsletter__privacy');
+      if (privacyText) {
+        privacyText.style.display = 'none';
+      }
+
+      // TODO: Integrate with Beehiiv API
+      // For now, log the subscription
+      console.log('Newsletter subscription:', email);
+
+      // Optional: Send to a webhook or API endpoint
+      // fetch('YOUR_BEEHIIV_ENDPOINT', {
+      //   method: 'POST',
+      //   headers: { 'Content-Type': 'application/json' },
+      //   body: JSON.stringify({ email: email })
+      // });
+    });
+
+    // Reset border on input focus
+    const emailInput = newsletterForm.querySelector('.newsletter__input');
+    if (emailInput) {
+      emailInput.addEventListener('focus', function() {
+        this.style.borderColor = 'transparent';
+      });
+    }
+  }
+
+  // ==========================================================================
+  // Update Placeholder Translations
+  // ==========================================================================
+  function updatePlaceholders() {
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+      const key = el.getAttribute('data-i18n-placeholder');
+      if (translations[currentLang] && translations[currentLang][key]) {
+        el.placeholder = translations[currentLang][key];
+      }
+    });
+  }
+
+  // Initial placeholder update
+  document.addEventListener('DOMContentLoaded', updatePlaceholders);
 
   // ==========================================================================
   // Console Welcome Message

@@ -1456,6 +1456,154 @@ p { max-width: 65ch; }
 }
 
 /* --------------------------------------------------------------------------
+   14b. Newsletter Section
+   -------------------------------------------------------------------------- */
+.newsletter {
+  background: var(--color-negro);
+  text-align: center;
+}
+
+.newsletter__content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.newsletter__icon {
+  margin-bottom: var(--space-md);
+  color: var(--color-azul-costa);
+  display: flex;
+  justify-content: center;
+}
+
+.newsletter__label {
+  font-size: var(--text-micro);
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-azul-costa);
+  margin-bottom: var(--space-sm);
+}
+
+.newsletter__title {
+  color: var(--color-blanco);
+  margin-bottom: var(--space-sm);
+}
+
+.newsletter__intro {
+  font-size: var(--text-body);
+  font-weight: 300;
+  color: var(--color-blanco);
+  opacity: 0.7;
+  margin-bottom: var(--space-lg);
+  max-width: 100%;
+}
+
+.newsletter__form {
+  margin-bottom: var(--space-lg);
+}
+
+.newsletter__input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  max-width: 450px;
+  margin: 0 auto var(--space-sm);
+}
+
+.newsletter__input {
+  width: 100%;
+  padding: var(--space-sm) var(--space-md);
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  color: var(--color-negro);
+  background: var(--color-blanco);
+  border: 2px solid transparent;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-smooth);
+}
+
+.newsletter__input:focus {
+  outline: none;
+  border-color: var(--color-azul-costa);
+  box-shadow: 0 0 0 4px rgba(65, 105, 225, 0.15);
+}
+
+.newsletter__input::placeholder {
+  color: var(--color-negro);
+  opacity: 0.4;
+}
+
+.newsletter__btn {
+  width: 100%;
+  padding: var(--space-sm) var(--space-md);
+}
+
+.newsletter__privacy {
+  font-size: var(--text-micro);
+  color: var(--color-blanco);
+  opacity: 0.4;
+  max-width: 100%;
+}
+
+.newsletter__features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-md) var(--space-lg);
+}
+
+.newsletter__feature {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: var(--text-small);
+  color: var(--color-blanco);
+  opacity: 0.6;
+}
+
+.newsletter__feature svg {
+  color: var(--color-azul-costa);
+  flex-shrink: 0;
+}
+
+/* Newsletter success state */
+.newsletter__form.is-success .newsletter__input-wrapper {
+  display: none;
+}
+
+.newsletter__form.is-success::after {
+  content: attr(data-success-message);
+  display: block;
+  padding: var(--space-md);
+  font-size: var(--text-body);
+  font-weight: 500;
+  color: var(--color-azul-costa);
+  background: rgba(65, 105, 225, 0.1);
+  border-radius: var(--radius-md);
+}
+
+@media (min-width: 480px) {
+  .newsletter__input-wrapper {
+    flex-direction: row;
+  }
+
+  .newsletter__input {
+    flex: 1;
+  }
+
+  .newsletter__btn {
+    width: auto;
+    flex-shrink: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .newsletter__features {
+    gap: var(--space-lg);
+  }
+}
+
+/* --------------------------------------------------------------------------
    15. CTA Final Section
    -------------------------------------------------------------------------- */
 .cta-final {
