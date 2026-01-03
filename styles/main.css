@@ -2208,3 +2208,55 @@ p { max-width: 65ch; }
     text-align: center;
   }
 }
+
+
+/* ==========================================================================
+   Mobile Performance Optimizations
+   ========================================================================== */
+@media (max-width: 767px) {
+  /* Hide videos on mobile - show gradient backgrounds instead */
+  .hero__video,
+  .proposito__video,
+  .metodologia__video,
+  .valores__video,
+  .cta-final__video,
+  .blog-slider__video {
+    display: none !important;
+  }
+
+  /* Static gradient backgrounds for sections with videos */
+  .hero__video-container {
+    background: linear-gradient(135deg, #1a1a2e 0%, #0a0a0a 100%);
+  }
+
+  .proposito__video-container {
+    background: linear-gradient(135deg, #1e3a5f 0%, #0a0a0a 100%);
+  }
+
+  .metodologia__video-container {
+    background: linear-gradient(135deg, #2d4a3e 0%, #0a0a0a 100%);
+  }
+
+  .valores__video-container {
+    background: linear-gradient(135deg, #3d2a4a 0%, #0a0a0a 100%);
+  }
+
+  .cta-final__video-container {
+    background: linear-gradient(135deg, #1a2a4a 0%, #0a0a0a 100%);
+  }
+
+  .blog-slider__video-bg {
+    background: linear-gradient(135deg, #1a1a2e 0%, #0a0a0a 100%);
+  }
+
+  /* Reduce animation complexity */
+  * {
+    animation-duration: 0.3s !important;
+    transition-duration: 0.2s !important;
+  }
+
+  /* Disable transforms on scroll for smoother experience */
+  [data-parallax] {
+    transform: none !important;
+  }
+}

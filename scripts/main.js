@@ -449,89 +449,81 @@
   });
 
   // ==========================================================================
-  // Video Management - Lazy Loading with IntersectionObserver
+  // Mobile Detection
   // ==========================================================================
-  const backgroundVideos = document.querySelectorAll('.hero__video, .proposito__video, .metodologia__video, .valores__video, .cta-final__video');
+  const isMobile = window.innerWidth < 768;
 
-  // Función para reproducir video de manera segura
-  function playVideo(video) {
-    if (video.paused) {
-      video.play().catch(() => {
-        // Si falla por políticas del navegador, está OK - se reproducirá con interacción
+  // ==========================================================================
+  // Video Management - Disabled on Mobile for Performance
+  // ==========================================================================
+  if (!isMobile) {
+    const backgroundVideos = document.querySelectorAll('.hero__video, .proposito__video, .metodologia__video, .valores__video, .cta-final__video, .blog-slider__video');
+
+    function playVideo(video) {
+      if (video.paused) {
+        video.play().catch(() => {});
+      }
+    }
+
+    function pauseVideo(video) {
+      if (!video.paused) {
+        video.pause();
+      }
+    }
+
+    const videoObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const video = entry.target;
+        if (entry.isIntersecting) {
+          if (video.preload === 'none' && video.readyState === 0) {
+            video.load();
+          }
+          if (video.readyState >= 3) {
+            playVideo(video);
+          } else {
+            video.addEventListener('canplaythrough', () => playVideo(video), { once: true });
+          }
+        } else {
+          pauseVideo(video);
+        }
+      });
+    }, { rootMargin: '100px', threshold: 0.1 });
+
+    backgroundVideos.forEach(video => {
+      video.muted = true;
+      video.playsInline = true;
+      videoObserver.observe(video);
+    });
+
+    const heroVideo = document.querySelector('.hero__video');
+    if (heroVideo) {
+      if (heroVideo.readyState >= 3) {
+        playVideo(heroVideo);
+      } else {
+        heroVideo.addEventListener('canplaythrough', () => playVideo(heroVideo), { once: true });
+      }
+    }
+  }
+
+  // ==========================================================================
+  // Parallax Effect - Desktop Only
+  // ==========================================================================
+  if (!isMobile) {
+    const parallaxElements = document.querySelectorAll('[data-parallax]');
+
+    function updateParallax() {
+      parallaxElements.forEach(element => {
+        const rect = element.getBoundingClientRect();
+        const scrollPercent = (rect.top + rect.height) / (window.innerHeight + rect.height);
+        const parallaxOffset = (scrollPercent - 0.5) * 50;
+        element.style.transform = `translateY(${parallaxOffset}px)`;
       });
     }
-  }
 
-  // Función para pausar video
-  function pauseVideo(video) {
-    if (!video.paused) {
-      video.pause();
+    if (parallaxElements.length > 0) {
+      window.addEventListener('scroll', updateParallax, { passive: true });
+      updateParallax();
     }
-  }
-
-  // Observer para cargar y reproducir videos cuando son visibles
-  const videoObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      const video = entry.target;
-
-      if (entry.isIntersecting) {
-        // Si el video no ha sido cargado, cargarlo
-        if (video.preload === 'none' && video.readyState === 0) {
-          video.load();
-        }
-        // Reproducir cuando esté listo
-        if (video.readyState >= 3) {
-          playVideo(video);
-        } else {
-          video.addEventListener('canplaythrough', () => playVideo(video), { once: true });
-        }
-      } else {
-        // Pausar videos fuera de vista para ahorrar recursos
-        pauseVideo(video);
-      }
-    });
-  }, {
-    rootMargin: '100px', // Cargar un poco antes de que sea visible
-    threshold: 0.1
-  });
-
-  backgroundVideos.forEach(video => {
-    // Asegurar atributos correctos
-    video.muted = true;
-    video.playsInline = true;
-
-    // Observar el video
-    videoObserver.observe(video);
-  });
-
-  // El video del hero tiene preload="auto", intentar reproducirlo inmediatamente
-  const heroVideo = document.querySelector('.hero__video');
-  if (heroVideo) {
-    if (heroVideo.readyState >= 3) {
-      playVideo(heroVideo);
-    } else {
-      heroVideo.addEventListener('canplaythrough', () => playVideo(heroVideo), { once: true });
-    }
-  }
-
-  // ==========================================================================
-  // Parallax Effect for Videos
-  // ==========================================================================
-  const parallaxElements = document.querySelectorAll('[data-parallax]');
-
-  function updateParallax() {
-    parallaxElements.forEach(element => {
-      const rect = element.getBoundingClientRect();
-      const scrollPercent = (rect.top + rect.height) / (window.innerHeight + rect.height);
-      const parallaxOffset = (scrollPercent - 0.5) * 50;
-
-      element.style.transform = `translateY(${parallaxOffset}px)`;
-    });
-  }
-
-  if (parallaxElements.length > 0) {
-    window.addEventListener('scroll', updateParallax, { passive: true });
-    updateParallax();
   }
 
   // ==========================================================================
