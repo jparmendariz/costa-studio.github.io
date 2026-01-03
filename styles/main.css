@@ -733,7 +733,9 @@ p { max-width: 65ch; }
   font-size: var(--text-body);
   font-weight: 300;
   opacity: 0.6;
-  margin-top: 0;
+  margin: 0 auto;
+  max-width: 600px;
+  text-align: center;
 }
 
 .servicios__grid {
@@ -903,7 +905,9 @@ p { max-width: 65ch; }
   font-weight: 300;
   color: var(--color-blanco);
   opacity: 0.6;
-  margin-top: 0;
+  margin: 0 auto;
+  max-width: 600px;
+  text-align: center;
 }
 
 .metodologia__compass {
@@ -1120,7 +1124,9 @@ p { max-width: 65ch; }
   font-size: var(--text-body);
   font-weight: 300;
   opacity: 0.6;
-  margin-top: 0;
+  margin: 0 auto;
+  max-width: 600px;
+  text-align: center;
 }
 
 .portafolio__grid {
