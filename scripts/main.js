@@ -447,54 +447,71 @@
   });
 
   // ==========================================================================
-  // Video Management - Loading, Loop & Error Handling
+  // Video Management - Lazy Loading with IntersectionObserver
   // ==========================================================================
-  const allVideos = document.querySelectorAll('video');
+  const backgroundVideos = document.querySelectorAll('.hero__video, .proposito__video, .metodologia__video, .valores__video, .cta-final__video');
 
-  allVideos.forEach(video => {
+  // Función para reproducir video de manera segura
+  function playVideo(video) {
+    if (video.paused) {
+      video.play().catch(() => {
+        // Si falla por políticas del navegador, está OK - se reproducirá con interacción
+      });
+    }
+  }
+
+  // Función para pausar video
+  function pauseVideo(video) {
+    if (!video.paused) {
+      video.pause();
+    }
+  }
+
+  // Observer para cargar y reproducir videos cuando son visibles
+  const videoObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const video = entry.target;
+
+      if (entry.isIntersecting) {
+        // Si el video no ha sido cargado, cargarlo
+        if (video.preload === 'none' && video.readyState === 0) {
+          video.load();
+        }
+        // Reproducir cuando esté listo
+        if (video.readyState >= 3) {
+          playVideo(video);
+        } else {
+          video.addEventListener('canplaythrough', () => playVideo(video), { once: true });
+        }
+      } else {
+        // Pausar videos fuera de vista para ahorrar recursos
+        pauseVideo(video);
+      }
+    });
+  }, {
+    rootMargin: '100px', // Cargar un poco antes de que sea visible
+    threshold: 0.1
+  });
+
+  backgroundVideos.forEach(video => {
     // Asegurar atributos correctos
     video.muted = true;
     video.playsInline = true;
     video.loop = true;
 
-    // Fallback para loop - reiniciar cuando termine
-    video.addEventListener('ended', () => {
-      video.currentTime = 0;
-      video.play().catch(() => {});
-    });
-
-    // Reintentar reproducción si se pausa inesperadamente
-    video.addEventListener('pause', () => {
-      // Solo reintentar si el video debería estar reproduciéndose
-      if (!video.ended && video.readyState >= 2) {
-        setTimeout(() => {
-          video.play().catch(() => {});
-        }, 100);
-      }
-    });
-
-    // Manejar errores de carga
-    video.addEventListener('error', () => {
-      console.log('Video error, retrying...', video.src);
-      setTimeout(() => {
-        video.load();
-        video.play().catch(() => {});
-      }, 2000);
-    });
-
-    // Cuando el video esté listo, reproducir
-    video.addEventListener('canplay', () => {
-      video.play().catch(() => {});
-    });
-
-    // Intentar reproducir inmediatamente
-    video.play().catch(() => {
-      // Si falla, esperar e intentar de nuevo
-      setTimeout(() => {
-        video.play().catch(() => {});
-      }, 1000);
-    });
+    // Observar el video
+    videoObserver.observe(video);
   });
+
+  // El video del hero tiene preload="auto", intentar reproducirlo inmediatamente
+  const heroVideo = document.querySelector('.hero__video');
+  if (heroVideo) {
+    if (heroVideo.readyState >= 3) {
+      playVideo(heroVideo);
+    } else {
+      heroVideo.addEventListener('canplaythrough', () => playVideo(heroVideo), { once: true });
+    }
+  }
 
   // ==========================================================================
   // Parallax Effect for Videos
