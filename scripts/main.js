@@ -16,7 +16,8 @@
       'nav.services': 'Servicios',
       'nav.methodology': 'Metodología',
       'nav.portfolio': 'Portafolio',
-      'nav.blog': 'Blog',
+      'nav.about': 'Nosotros',
+      'nav.newsletter': 'Newsletter',
       'nav.cta': 'Agendar llamada',
 
       // Hero
@@ -94,6 +95,20 @@
       'blog.intro': 'Lo último en influencer marketing de fuentes líderes en la industria.',
       'blog.readMore': 'Leer artículo',
 
+      // About
+      'about.label': 'Quiénes somos',
+      'about.title': 'Una agencia boutique con mentalidad de consultoría',
+      'about.p1': 'Somos un equipo multidisciplinario en Ciudad de México que combina estrategia, creatividad y tecnología para transformar cómo las marcas se conectan con sus audiencias.',
+      'about.p2': 'Nacimos de la convicción de que el influencer marketing merece un enfoque más riguroso: menos improvisación, más estrategia. Menos vanity metrics, más resultados reales.',
+      'about.p3': 'Trabajamos con un número limitado de clientes porque creemos en la profundidad sobre el volumen. Cada campaña recibe nuestra atención completa.',
+      'about.pillar1.title': 'Estrategia Primero',
+      'about.pillar1.desc': 'Cada decisión respaldada por datos y objetivos claros.',
+      'about.pillar2.title': 'Transparencia Total',
+      'about.pillar2.desc': 'Acceso en tiempo real a métricas y resultados.',
+      'about.pillar3.title': 'Ejecución Impecable',
+      'about.pillar3.desc': 'Del concepto al resultado sin fricción.',
+      'about.cta': 'Conoce nuestra metodología',
+
       // Newsletter
       'newsletter.label': 'Mantente informado',
       'newsletter.title': 'Claridad cada semana',
@@ -127,7 +142,8 @@
       'nav.services': 'Services',
       'nav.methodology': 'Methodology',
       'nav.portfolio': 'Portfolio',
-      'nav.blog': 'Blog',
+      'nav.about': 'About',
+      'nav.newsletter': 'Newsletter',
       'nav.cta': 'Book a call',
 
       // Hero
@@ -204,6 +220,20 @@
       'blog.title': 'Blog',
       'blog.intro': 'The latest in influencer marketing from leading industry sources.',
       'blog.readMore': 'Read article',
+
+      // About
+      'about.label': 'Who we are',
+      'about.title': 'A boutique agency with a consulting mindset',
+      'about.p1': 'We are a multidisciplinary team in Mexico City that combines strategy, creativity and technology to transform how brands connect with their audiences.',
+      'about.p2': 'We were born from the conviction that influencer marketing deserves a more rigorous approach: less improvisation, more strategy. Less vanity metrics, more real results.',
+      'about.p3': 'We work with a limited number of clients because we believe in depth over volume. Each campaign receives our complete attention.',
+      'about.pillar1.title': 'Strategy First',
+      'about.pillar1.desc': 'Every decision backed by data and clear objectives.',
+      'about.pillar2.title': 'Total Transparency',
+      'about.pillar2.desc': 'Real-time access to metrics and results.',
+      'about.pillar3.title': 'Flawless Execution',
+      'about.pillar3.desc': 'From concept to result without friction.',
+      'about.cta': 'Discover our methodology',
 
       // Newsletter
       'newsletter.label': 'Stay informed',
@@ -454,22 +484,35 @@
   const isMobile = window.innerWidth < 768;
 
   // ==========================================================================
-  // Video Management - Disabled on Mobile for Performance
+  // Video Management
   // ==========================================================================
+  function playVideo(video) {
+    if (video.paused) {
+      video.play().catch(() => {});
+    }
+  }
+
+  function pauseVideo(video) {
+    if (!video.paused) {
+      video.pause();
+    }
+  }
+
+  // Hero video plays on all devices
+  const heroVideo = document.querySelector('.hero__video');
+  if (heroVideo) {
+    heroVideo.muted = true;
+    heroVideo.playsInline = true;
+    if (heroVideo.readyState >= 3) {
+      playVideo(heroVideo);
+    } else {
+      heroVideo.addEventListener('canplaythrough', () => playVideo(heroVideo), { once: true });
+    }
+  }
+
+  // Other videos only on desktop
   if (!isMobile) {
-    const backgroundVideos = document.querySelectorAll('.hero__video, .proposito__video, .metodologia__video, .valores__video, .cta-final__video, .blog-slider__video');
-
-    function playVideo(video) {
-      if (video.paused) {
-        video.play().catch(() => {});
-      }
-    }
-
-    function pauseVideo(video) {
-      if (!video.paused) {
-        video.pause();
-      }
-    }
+    const backgroundVideos = document.querySelectorAll('.proposito__video, .metodologia__video, .valores__video, .cta-final__video, .blog-slider__video');
 
     const videoObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -494,15 +537,6 @@
       video.playsInline = true;
       videoObserver.observe(video);
     });
-
-    const heroVideo = document.querySelector('.hero__video');
-    if (heroVideo) {
-      if (heroVideo.readyState >= 3) {
-        playVideo(heroVideo);
-      } else {
-        heroVideo.addEventListener('canplaythrough', () => playVideo(heroVideo), { once: true });
-      }
-    }
   }
 
   // ==========================================================================
@@ -688,6 +722,73 @@
   // Prevent FOUC (Flash of Unstyled Content)
   // ==========================================================================
   document.documentElement.classList.add('js-loaded');
+
+  // ==========================================================================
+  // Newsletter Form Handler (Beehiiv Integration)
+  // ==========================================================================
+  const newsletterForm = document.getElementById('newsletter-form');
+  const newsletterMessage = document.getElementById('newsletter-message');
+
+  if (newsletterForm) {
+    newsletterForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const btn = this.querySelector('.newsletter__btn');
+      const emailInput = this.querySelector('.newsletter__input');
+      const email = emailInput.value.trim();
+      const beehiivId = this.dataset.beehiivId;
+
+      if (!email) return;
+
+      // Show loading state
+      btn.classList.add('is-loading');
+      btn.disabled = true;
+      newsletterMessage.textContent = '';
+      newsletterMessage.className = 'newsletter__message';
+
+      // Create hidden iframe for form submission (bypasses CORS)
+      const iframeName = 'beehiiv-submit-' + Date.now();
+      const iframe = document.createElement('iframe');
+      iframe.name = iframeName;
+      iframe.style.display = 'none';
+      document.body.appendChild(iframe);
+
+      // Create temporary form targeting the iframe
+      const tempForm = document.createElement('form');
+      tempForm.method = 'POST';
+      tempForm.action = `https://embeds.beehiiv.com/subscribe/${beehiivId}`;
+      tempForm.target = iframeName;
+      tempForm.style.display = 'none';
+
+      // Add email field
+      const emailField = document.createElement('input');
+      emailField.type = 'email';
+      emailField.name = 'email';
+      emailField.value = email;
+      tempForm.appendChild(emailField);
+
+      document.body.appendChild(tempForm);
+      tempForm.submit();
+
+      // Show success after brief delay (form submitted via iframe)
+      setTimeout(() => {
+        const successMsg = currentLang === 'en'
+          ? 'Thank you! Check your inbox for confirmation.'
+          : '¡Gracias! Revisa tu bandeja de entrada.';
+
+        newsletterMessage.textContent = successMsg;
+        newsletterMessage.classList.add('is-success');
+        emailInput.value = '';
+
+        btn.classList.remove('is-loading');
+        btn.disabled = false;
+
+        // Cleanup
+        document.body.removeChild(tempForm);
+        setTimeout(() => document.body.removeChild(iframe), 5000);
+      }, 1500);
+    });
+  }
 
   // ==========================================================================
   // Console Welcome Message

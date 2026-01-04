@@ -51,7 +51,8 @@
         <a href="#servicios" class="header__link" data-i18n="nav.services">Servicios</a>
         <a href="#metodologia" class="header__link" data-i18n="nav.methodology">Metodología</a>
         <a href="#portafolio" class="header__link" data-i18n="nav.portfolio">Portafolio</a>
-        <a href="#blog" class="header__link" data-i18n="nav.blog">Blog</a>
+        <a href="#nosotros" class="header__link" data-i18n="nav.about">Nosotros</a>
+        <a href="#newsletter" class="header__link" data-i18n="nav.newsletter">Newsletter</a>
       </div>
       <a href="#agendar" class="btn-primary header__cta" data-i18n="nav.cta">Agendar llamada</a>
       <div class="header__actions">
@@ -74,7 +75,8 @@
       <a href="#servicios" class="mobile-menu__link" data-i18n="nav.services">Servicios</a>
       <a href="#metodologia" class="mobile-menu__link" data-i18n="nav.methodology">Metodología</a>
       <a href="#portafolio" class="mobile-menu__link" data-i18n="nav.portfolio">Portafolio</a>
-      <a href="#blog" class="mobile-menu__link" data-i18n="nav.blog">Blog</a>
+      <a href="#nosotros" class="mobile-menu__link" data-i18n="nav.about">Nosotros</a>
+      <a href="#newsletter" class="mobile-menu__link" data-i18n="nav.newsletter">Newsletter</a>
       <a href="#agendar" class="btn-primary mobile-menu__cta" data-i18n="nav.cta">Agendar llamada</a>
       <button class="lang-toggle lang-toggle--mobile" id="lang-toggle-mobile" aria-label="Cambiar idioma">
         <span class="lang-toggle__current">ES</span>
@@ -614,6 +616,81 @@
     </section>
 
     <!-- ==================================================================
+         NOSOTROS - Sobre la Agencia
+         ================================================================== -->
+    <section class="nosotros section" id="nosotros" aria-labelledby="nosotros-title">
+      <div class="container">
+        <div class="nosotros__header">
+          <div class="nosotros__label" data-animate="fade-up" data-i18n="about.label">Quiénes somos</div>
+          <h2 id="nosotros-title" class="nosotros__title" data-animate="fade-up" data-delay="0.1" data-i18n="about.title">
+            Una agencia boutique con mentalidad de consultoría
+          </h2>
+        </div>
+
+        <div class="nosotros__content">
+          <div class="nosotros__text" data-animate="fade-up" data-delay="0.2">
+            <p data-i18n="about.p1">
+              Somos un equipo multidisciplinario en Ciudad de México que combina estrategia,
+              creatividad y tecnología para transformar cómo las marcas se conectan con sus audiencias.
+            </p>
+            <p data-i18n="about.p2">
+              Nacimos de la convicción de que el influencer marketing merece un enfoque más riguroso:
+              menos improvisación, más estrategia. Menos vanity metrics, más resultados reales.
+            </p>
+            <p data-i18n="about.p3">
+              Trabajamos con un número limitado de clientes porque creemos en la profundidad
+              sobre el volumen. Cada campaña recibe nuestra atención completa.
+            </p>
+          </div>
+
+          <div class="nosotros__pillars" data-animate="fade-up" data-delay="0.3">
+            <div class="nosotros__pillar">
+              <div class="nosotros__pillar-icon">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                  <path d="M16 4L4 12v8l12 8 12-8v-8L16 4z" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M16 12v8" stroke="currentColor" stroke-width="1.5"/>
+                </svg>
+              </div>
+              <h3 data-i18n="about.pillar1.title">Estrategia Primero</h3>
+              <p data-i18n="about.pillar1.desc">Cada decisión respaldada por datos y objetivos claros.</p>
+            </div>
+
+            <div class="nosotros__pillar">
+              <div class="nosotros__pillar-icon">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                  <circle cx="16" cy="16" r="12" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M16 8v8l6 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <h3 data-i18n="about.pillar2.title">Transparencia Total</h3>
+              <p data-i18n="about.pillar2.desc">Acceso en tiempo real a métricas y resultados.</p>
+            </div>
+
+            <div class="nosotros__pillar">
+              <div class="nosotros__pillar-icon">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                  <path d="M8 24l8-16 8 16" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                  <path d="M11 20h10" stroke="currentColor" stroke-width="1.5"/>
+                </svg>
+              </div>
+              <h3 data-i18n="about.pillar3.title">Ejecución Impecable</h3>
+              <p data-i18n="about.pillar3.desc">Del concepto al resultado sin fricción.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="nosotros__cta" data-animate="fade-up" data-delay="0.4">
+          <a href="#agendar" class="btn-secondary">
+            <span data-i18n="about.cta">Conoce nuestra metodología</span>
+            <svg class="btn-secondary__arrow" width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M4 10h12m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
          NEWSLETTER - Suscripción
          ================================================================== -->
     <section class="newsletter section" id="newsletter" aria-labelledby="newsletter-title">
@@ -639,13 +716,34 @@
           </p>
 
           <div class="newsletter__form-wrapper" data-animate="fade-up" data-delay="0.3">
-            <iframe
-              src="https://embeds.beehiiv.com/5f9eb2f0-a4a5-4d45-b4fb-12abee4d4923?slim=true&colors=true&color_primary=%234169E1"
-              data-test-id="beehiiv-embed"
-              frameborder="0"
-              scrolling="no"
-              class="newsletter__beehiiv"
-            ></iframe>
+            <form class="newsletter__form" id="newsletter-form" data-beehiiv-id="5f9eb2f0-a4a5-4d45-b4fb-12abee4d4923">
+              <div class="newsletter__input-group">
+                <input
+                  type="email"
+                  name="email"
+                  class="newsletter__input"
+                  placeholder="Tu correo electrónico"
+                  required
+                  aria-label="Correo electrónico"
+                >
+                <button type="submit" class="newsletter__btn">
+                  <span class="newsletter__btn-text" data-i18n="newsletter.btn">Suscribirse</span>
+                  <span class="newsletter__btn-icon" aria-hidden="true">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                      <path d="M4 10h12m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                  <span class="newsletter__btn-loading" aria-hidden="true">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <circle cx="12" cy="12" r="10" stroke-dasharray="32" stroke-dashoffset="32">
+                        <animate attributeName="stroke-dashoffset" values="32;0" dur="1s" repeatCount="indefinite"/>
+                      </circle>
+                    </svg>
+                  </span>
+                </button>
+              </div>
+              <p class="newsletter__message" id="newsletter-message" aria-live="polite"></p>
+            </form>
             <p class="newsletter__privacy" data-i18n="newsletter.privacy">
               Sin spam. Solo contenido que vale la pena. Cancela cuando quieras.
             </p>

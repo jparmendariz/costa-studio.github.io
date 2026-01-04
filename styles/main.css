@@ -1302,6 +1302,10 @@ p { max-width: 65ch; }
 
 .portafolio__cta {
   text-align: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .portafolio__cta p {
@@ -1574,6 +1578,121 @@ p { max-width: 65ch; }
 }
 
 /* --------------------------------------------------------------------------
+   14a. Nosotros Section
+   -------------------------------------------------------------------------- */
+.nosotros {
+  background: var(--color-arena);
+}
+
+.nosotros__header {
+  text-align: center;
+  margin-bottom: var(--space-xl);
+}
+
+.nosotros__label {
+  font-size: var(--text-micro);
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-azul-costa);
+  margin-bottom: var(--space-sm);
+}
+
+.nosotros__title {
+  max-width: 800px;
+  margin: 0 auto;
+  color: var(--color-negro);
+}
+
+.nosotros__content {
+  display: grid;
+  gap: var(--space-xl);
+}
+
+.nosotros__text {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.nosotros__text p {
+  font-size: var(--text-body);
+  line-height: 1.8;
+  color: var(--color-negro);
+  opacity: 0.8;
+  margin-bottom: var(--space-md);
+}
+
+.nosotros__text p:last-child {
+  margin-bottom: 0;
+}
+
+.nosotros__pillars {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-lg);
+  margin-top: var(--space-lg);
+}
+
+.nosotros__pillar {
+  background: var(--color-blanco);
+  padding: var(--space-lg);
+  border-radius: var(--radius-lg);
+  text-align: center;
+  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+}
+
+.nosotros__pillar:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+}
+
+.nosotros__pillar-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 64px;
+  height: 64px;
+  margin: 0 auto var(--space-md);
+  background: var(--color-arena);
+  border-radius: 50%;
+  color: var(--color-azul-costa);
+}
+
+.nosotros__pillar h3 {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  color: var(--color-negro);
+  margin-bottom: var(--space-xs);
+}
+
+.nosotros__pillar p {
+  font-size: var(--text-small);
+  color: var(--color-negro);
+  opacity: 0.7;
+  line-height: 1.6;
+}
+
+.nosotros__cta {
+  text-align: center;
+  margin-top: var(--space-xl);
+}
+
+.nosotros__cta .btn-secondary {
+  color: var(--color-negro);
+}
+
+@media (min-width: 768px) {
+  .nosotros__content {
+    gap: var(--space-2xl);
+  }
+
+  .nosotros__pillars {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* --------------------------------------------------------------------------
    14b. Newsletter Section
    -------------------------------------------------------------------------- */
 .newsletter {
@@ -1620,13 +1739,120 @@ p { max-width: 65ch; }
   margin-bottom: var(--space-lg);
 }
 
-.newsletter__beehiiv {
+.newsletter__form {
   width: 100%;
-  max-width: 480px;
-  height: 52px;
-  margin: 0 auto var(--space-sm);
+  max-width: 500px;
+  margin: 0 auto var(--space-md);
+}
+
+.newsletter__input-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.newsletter__input {
+  width: 100%;
+  padding: 1.25rem 1.5rem;
+  border: 2px solid rgba(255, 255, 255, 0.2);
   border-radius: var(--radius-md);
-  background-color: transparent;
+  background: rgba(255, 255, 255, 0.05);
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  color: var(--color-blanco);
+  outline: none;
+  transition: border-color var(--transition-smooth), background var(--transition-smooth);
+  text-align: center;
+}
+
+.newsletter__input:focus {
+  border-color: var(--color-azul-costa);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.newsletter__input::placeholder {
+  color: var(--color-blanco);
+  opacity: 0.5;
+}
+
+.newsletter__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  width: 100%;
+  padding: 1.25rem 2rem;
+  background: var(--color-azul-costa);
+  border: none;
+  border-radius: var(--radius-md);
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  font-weight: 600;
+  color: var(--color-blanco);
+  cursor: pointer;
+  transition: background var(--transition-smooth), transform var(--transition-smooth), box-shadow var(--transition-smooth);
+  white-space: nowrap;
+}
+
+.newsletter__btn:hover {
+  background: #3457C9;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(65, 105, 225, 0.4);
+}
+
+.newsletter__btn:active {
+  transform: translateY(0);
+}
+
+.newsletter__btn-icon {
+  display: flex;
+  align-items: center;
+}
+
+.newsletter__btn-loading {
+  display: none;
+}
+
+.newsletter__btn.is-loading .newsletter__btn-text,
+.newsletter__btn.is-loading .newsletter__btn-icon {
+  display: none;
+}
+
+.newsletter__btn.is-loading .newsletter__btn-loading {
+  display: block;
+}
+
+.newsletter__message {
+  margin-top: var(--space-sm);
+  font-size: var(--text-small);
+  text-align: center;
+}
+
+.newsletter__message.is-success {
+  color: #4ade80;
+}
+
+.newsletter__message.is-error {
+  color: #f87171;
+}
+
+@media (min-width: 480px) {
+  .newsletter__input-group {
+    flex-direction: row;
+    gap: 0;
+  }
+
+  .newsletter__input {
+    border-radius: var(--radius-md) 0 0 var(--radius-md);
+    border-right: none;
+    text-align: left;
+  }
+
+  .newsletter__btn {
+    width: auto;
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    padding: 1.25rem 1.75rem;
+  }
 }
 
 .newsletter__privacy {
@@ -2062,6 +2288,9 @@ p { max-width: 65ch; }
   opacity: 0;
   visibility: hidden;
   transition: all var(--transition-smooth);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
 }
 
 .mobile-menu.is-open {
@@ -2073,7 +2302,10 @@ p { max-width: 65ch; }
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--space-lg);
+  gap: var(--space-md);
+  padding: 100px var(--space-lg);
+  max-height: 100%;
+  width: 100%;
 }
 
 .mobile-menu__link {
